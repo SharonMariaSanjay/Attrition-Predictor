@@ -58,7 +58,7 @@ TOP ATTRITION DRIVERS (by model weight)
 
 *(This is a real run of the code in this repo, not a mocked example.)*
 
-## Design choices worth calling out in an interview
+## Design Decisions
 
 - **Logistic regression, not a black-box model** — it's simple enough to
   explain fully: each feature gets a weight, and the sign/size of that
