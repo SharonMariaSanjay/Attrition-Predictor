@@ -5,7 +5,6 @@ leave, based on tenure, job satisfaction, overtime, income, commute
 distance, and promotion history — and explains *which factors* are driving
 that risk.
 
-Runs **entirely locally** — no API key, no signup, no cost.
 
 ## Why I built this
 
@@ -56,8 +55,6 @@ TOP ATTRITION DRIVERS (by model weight)
   Age                +0.28   (increases attrition risk)
 ```
 
-*(This is a real run of the code in this repo, not a mocked example.)*
-
 ## Design Decisions
 
 - **Logistic regression, not a black-box model** — it's simple enough to
@@ -80,16 +77,3 @@ TOP ATTRITION DRIVERS (by model weight)
   feature like JobSatisfaction (values 1-4) in raw coefficient size, even
   if satisfaction matters more. Scaling makes the driver ranking honest.
 
-## Swapping in real data
-
-To use the actual IBM HR Analytics Employee Attrition dataset (public,
-free, on Kaggle) instead of the synthetic one: download it, save it as
-`data/employee_data.csv` with matching column names (or adjust
-`feature_cols` in `train_model.py`), and skip running `generate_data.py`.
-
-## Possible extensions
-
-- Try a decision tree or random forest and compare accuracy/interpretability
-- Add a simple risk-tier output (Low/Medium/High) instead of raw probability
-- Build a small Streamlit form: enter one employee's details, get their
-  predicted risk and top contributing factors
